@@ -1,0 +1,17 @@
+# The Rust toolchain, from the server's package catalog: what the planner,
+# a Rust program, builds and runs in. The checks themselves run in `python`.
+[packages]
+cargo = {}
+rustc = {}
+gcc = {}                           # the C compiler rustc links with
+
+[variables]
+PATH = "{root}/bin"
+SSL_CERT_FILE = "{root}/etc/ssl/certs/ca-bundle.crt"
+
+[build]                            # what building the environment may use
+cpus = 2
+memory = "2 GiB"
+scratch = "8 GiB"
+output = "4 GiB"
+time = "30 min"

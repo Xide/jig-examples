@@ -1,0 +1,14 @@
+# Python, from the server's package catalog: what the tests run in.
+[packages]
+python3 = {}
+
+[variables]
+PATH = "{root}/bin"
+PYTHONDONTWRITEBYTECODE = "1"      # the sources a check reads are read-only
+
+[build]                            # what building the environment may use
+cpus = 1
+memory = "1 GiB"
+scratch = "4 GiB"
+output = "2 GiB"
+time = "30 min"

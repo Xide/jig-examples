@@ -1,0 +1,24 @@
+[package]
+# The name every repository's planner has.
+name = "jig-repository-planner"
+version = "0.1.0"
+edition = "2024"
+# The SDK's oldest Rust: the lock picks what it can build.
+rust-version = "1.88"
+publish = false
+
+[dependencies]
+jig = { package = "jig-sdk", version = "0.1" }
+jig-sdk-cargo = "0.1"
+
+# The planner is a workspace of its own, with its own lock.
+[workspace]
+
+# What Jig needs to build the planner and run it: the environment, the
+# repository paths its build reads besides `.jig/planner/` (none), and what
+# its build and each planning may use.
+[package.metadata.jig]
+environment = "rust"
+sources = []
+build = { cpus = 2, memory = "2 GiB", scratch = "4 GiB", output = "256 MiB", time = "20 min" }
+plan = { cpus = 1, memory = "1 GiB", scratch = "1 GiB", output = "64 MiB", time = "2 min" }

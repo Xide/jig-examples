@@ -1,0 +1,19 @@
+# The Rust toolchain, from the server's package catalog. The planner builds
+# and runs in it, and so do the workspace's checks.
+[packages]
+cargo = {}
+rustc = {}
+clippy = {}
+rustfmt = {}
+gcc = {}                           # the C compiler rustc links with
+
+[variables]
+PATH = "{root}/bin"
+SSL_CERT_FILE = "{root}/etc/ssl/certs/ca-bundle.crt"
+
+[build]                            # what building the environment may use
+cpus = 2
+memory = "2 GiB"
+scratch = "8 GiB"
+output = "4 GiB"
+time = "30 min"
