@@ -15,7 +15,7 @@ as to this file, keeps its result.
 
 A Jig repository and an empty working copy of it, as in
 [Getting started](https://jig.nerds.casa/getting-started/), with a runner,
-as in [Run a runner](https://jig.nerds.casa/run-a-runner/). The commands
+as in [Install a runner](https://jig.nerds.casa/install-a-runner/). The commands
 below run in that working copy, `~/src/demo` here. The examples are in
 `~/jig-examples`, downloaded as [their README](../README.md) says.
 
